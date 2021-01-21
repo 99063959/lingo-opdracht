@@ -5,23 +5,23 @@ body{
 #container1{
 	background-color: yellow;
 	width: 600px;
-	height: 250px;
+	height: 100px;
 	margin: 0 auto;
 }
 
 #container2{
 	background-color: white;
+	display: grid;
+	grid-template-columns: auto auto auto auto auto;
 	width: 600px;
-	height: 150px;
+	height: 300px;
 	margin: 0 auto;
 	text-align: center;
 }
 
-.letter1, .letter2, .letter3, .letter4, .letter5{
-	display: inline-block;
-	border-color: black;
-	border-width: 2px;
-	border-style: solid;
-	margin: 10px;
-	padding: 30px;
+div{
+	border: 2px solid black;
+	text-align: center;
+	width: 90px;
+	height: 50px;
 }
