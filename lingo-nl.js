@@ -479,3 +479,5 @@ var words = [
 	"zever",
 	"zeeen"
 ];
+
+//export {words};
