@@ -1,8 +1,6 @@
-//import {words} from "lingo-nl.js";
 var container2 = document.getElementById("container2");
 var randomWoord;
-var letterInput = [];
-var letterRandom = [];
+console.log(words[6])
 
 for(i=1;i<=25;i++){
 	var blok = document.createElement("div");
@@ -17,6 +15,5 @@ function randomWoord(){
 
 function eersteLetter(){
 	var blok1 = document.getElementById("blok1");
-	blok1.innerHTML = "<h1></h1>" + randomWoord[0];
+	blok1.innerHTML = "<h1></h1>" + randomWoord;
 }
-
