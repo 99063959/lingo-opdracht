@@ -1,11 +1,16 @@
 var container2 = document.getElementById("container2");
+var button = document.getElementById("button");
 var randomWoord;
-console.log(words[6])
+var woordletters =[];
+var inputletters =[];
+var pogingen = 0;
 
-for(i=1;i<=25;i++){
-	var blok = document.createElement("div");
-	container2.appendChild(blok);
-	blok.id = "blok" + i;
+for(var j=1;j<=5;j++){
+	for(var i=1;i<=5;i++){
+		var blok = document.createElement("div");
+		container2.appendChild(blok);
+		blok.id = "woord" + j + "letter" + i;
+	}
 }
 
 function randomWoord(){
@@ -14,6 +19,44 @@ function randomWoord(){
 }
 
 function eersteLetter(){
-	var blok1 = document.getElementById("blok1");
-	blok1.innerHTML = "<h1></h1>" + randomWoord;
+	var blok1 = document.getElementById("woord1letter1").innerHTML = "<h1></h1>" + randomWoord[0];
 }
+
+function woordSplit(woord){
+	woordletters = randomWoord.split("");
+	for(var i=0;i<randomWoord.length;i++){
+		console.log(woordletters[i]);
+	}
+	inputletters = woord.split("");
+	for(var i=0;i<woord.length;i++){
+		console.log(inputletters[i]);
+	}
+}
+
+function woordCheck(woord){
+	pogingen++
+	woordSplit(woord);
+	if(pogingen > 5){
+		alert("verloren te veel pogingen");
+		location.reload();
+	}
+	if(woord == randomWoord){
+		alert("goed geraden");
+		location.reload();
+	}
+	for(var i=0;i<inputletters.length;i++){
+		document.getElementById("woord" + pogingen + "letter" + (i+1)).innerHTML = "<h1></h1>" + inputletters[i];
+
+		if(inputletters[i]== woordletters[i]){
+			document.getElementById("woord" + pogingen + "letter" + (i+1)).style.backgroundColor = "green";
+		}else{
+			if(woordletters.includes(inputletters[i])){
+				document.getElementById("woord" + pogingen + "letter" + (i+1)).style.backgroundColor = "yellow";
+				document.getElementById("woord" + pogingen + "letter" + (i+1)).style.borderRadius = "50%";
+			}
+		}
+	}
+}
+
+randomWoord();
+eersteLetter();
