@@ -24,9 +24,7 @@ function eersteLetter(){
 
 function woordSplit(woord){
 	woordletters = randomWoord.split("");
-	for(var i=0;i<randomWoord.length;i++){
-		console.log(woordletters[i]);
-	}
+	for(var i=0;i<randomWoord.length;i++)
 	inputletters = woord.split("");
 	for(var i=0;i<woord.length;i++){
 		console.log(inputletters[i]);
@@ -36,7 +34,7 @@ function woordSplit(woord){
 function woordCheck(woord){
 	pogingen++
 	woordSplit(woord);
-	if(pogingen > 5){
+	if(pogingen >=5){
 		alert("verloren te veel pogingen");
 		location.reload();
 	}
