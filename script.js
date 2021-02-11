@@ -3,6 +3,7 @@ var button = document.getElementById("button");
 var randomWoord;
 var woordletters =[];
 var inputletters =[];
+var letterCOPY = [];
 var pogingen = 0;
 
 for(var j=1;j<=5;j++){
@@ -26,9 +27,12 @@ function woordSplit(woord){
 	woordletters = randomWoord.split("");
 	for(var i=0;i<randomWoord.length;i++)
 	inputletters = woord.split("");
+
 	for(var i=0;i<woord.length;i++){
 		console.log(inputletters[i]);
 	}
+	letterCOPY= woordletters.slice(0,5);     
+	console.log(letterCOPY);
 }
 
 function woordCheck(woord){
@@ -42,13 +46,17 @@ function woordCheck(woord){
 		alert("goed geraden");
 		location.reload();
 	}
+	
 	for(var i=0;i<inputletters.length;i++){
 		document.getElementById("woord" + pogingen + "letter" + (i+1)).innerHTML = "<h1></h1>" + inputletters[i];
 
 		if(inputletters[i]== woordletters[i]){
 			document.getElementById("woord" + pogingen + "letter" + (i+1)).style.backgroundColor = "green";
+			letterCOPY[i]= null;
+			console.log(letterCOPY);
 		}else{
-			if(woordletters.includes(inputletters[i])){
+			if(letterCOPY.includes(inputletters[i])){
+				console.log(letterCOPY);
 				document.getElementById("woord" + pogingen + "letter" + (i+1)).style.backgroundColor = "yellow";
 				document.getElementById("woord" + pogingen + "letter" + (i+1)).style.borderRadius = "50%";
 			}
