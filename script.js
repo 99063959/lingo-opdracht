@@ -15,8 +15,7 @@ for(var j=1;j<=5;j++){
 }
 
 function randomWoord(){
-	//randomWoord = words[Math.floor(Math.random() * words.length)];
-	randomWoord = "kaars";
+	randomWoord = words[Math.floor(Math.random() * words.length)];
     console.log(randomWoord);
 }
 
@@ -26,14 +25,10 @@ function eersteLetter(){
 
 function woordSplit(woord){
 	woordletters = randomWoord.split("");
-	for(var i=0;i<randomWoord.length;i++)
+	for(var i=0;i<randomWoord.length;i++){
 	inputletters = woord.split("");
-
-	for(var i=0;i<woord.length;i++){
-		console.log(inputletters[i]);
-	}
+    }
 	letterCOPY= woordletters.slice(0,5);     
-	console.log(letterCOPY);
 }
 
 function woordCheck(woord){
@@ -54,10 +49,8 @@ function woordCheck(woord){
         if(inputletters.includes(woordletters[i])){
             document.getElementById("woord" + pogingen + "letter" +(i+1)).style.backgroundColor="yellow";
             document.getElementById("woord" + pogingen + "letter" +(i+1)).style.borderRadius="50%";
-            console.log(woordletters[i] + "geel");
             woordletters[i] = "";
         }
-        console.log(inputletters[i] + "geel buiten iffie");
     }
 
     woordSplit(woord);
@@ -67,10 +60,7 @@ function woordCheck(woord){
 
         if(inputletters[i] == woordletters[i]){
             document.getElementById("woord" + pogingen + "letter" +(i+1)).style.backgroundColor="green";
-            console.log(woordletters[i]);
-            console.log(woordletters[i] + "groen");
         }
-        console.log(woordletters[i] + "groen buiten iffie");
         woordletters[i] = "";
     }
 }
