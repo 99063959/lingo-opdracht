@@ -1,8 +1,8 @@
 var container2 = document.getElementById("container2");
 var button = document.getElementById("button");
 var randomWoord;
-var woordletters =[];
-var inputletters =[];
+var woordletters = [];
+var inputletters = [];
 var letterCOPY = [];
 var pogingen = 0;
 
@@ -54,7 +54,6 @@ function woordCheck(woord){
         if(inputletters.includes(woordletters[i])){
             document.getElementById("woord" + pogingen + "letter" +(i+1)).style.backgroundColor="yellow";
             document.getElementById("woord" + pogingen + "letter" +(i+1)).style.borderRadius="50%";
-            //inputletters[i] = "";
             console.log(woordletters[i] + "geel");
             woordletters[i] = "";
         }
