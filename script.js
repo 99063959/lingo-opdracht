@@ -15,7 +15,8 @@ for(var j=1;j<=5;j++){
 }
 
 function randomWoord(){
-	randomWoord = words[Math.floor(Math.random() * words.length)];
+	//randomWoord = words[Math.floor(Math.random() * words.length)];
+    randomWoord = "dreun"
     console.log(randomWoord);
 }
 
@@ -36,11 +37,9 @@ function woordCheck(woord){
     woordSplit(woord);
     if(pogingen>=5){
         alert("verloren teveel pogingen");
-        location.reload();
     }
     if(woord==randomWoord){
         alert("goed geraden");
-        location.reload();
     }
     
     for(var i=0; i<inputletters.length; i++){
@@ -49,6 +48,8 @@ function woordCheck(woord){
         if(inputletters.includes(woordletters[i])){
             document.getElementById("woord" + pogingen + "letter" +(i+1)).style.backgroundColor="yellow";
             document.getElementById("woord" + pogingen + "letter" +(i+1)).style.borderRadius="50%";
+
+
             woordletters[i] = "";
         }
     }
