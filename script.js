@@ -3,7 +3,7 @@ var woord= words[nummer].toUpperCase();
 var copyword= woord;
 var div= ["container", "input"];
 var wordlength= woord.length;
-const aantal_rijen= 6;
+const aantal_rijen= 5;
 var RowHeight= 1;
 const id_row= "Row";
 const class_rows= "Rows";
@@ -31,7 +31,7 @@ function spelboord(){
     var label= document.createElement("label");
     label.setAttribute('type', "text");
     div[1].appendChild(label);
-    label.innerHTML= "Voer woord in:"
+    label.innerHTML= "vul een woord in"
 
     var input= document.createElement("input");
     input.setAttribute('style', "text-transform:uppercase");
@@ -66,12 +66,6 @@ function spelboord(){
 function CheckLetter(){
     pogingen++
     var InputUser= document.getElementById("wordinput").value.toUpperCase();
-    if(!isNaN(InputUser)){
-        alert("ERROR: INVOER IS GEEN WOORD!");
-    }
-    if(isNaN(InputUser) && InputUser.length != wordlength){
-        alert("ERROR: INVOER MOET " + woord.length + " LETTERS BEVATTEN!")
-    }
     if(isNaN(InputUser) && InputUser.length == wordlength && win == false){
         copyword= woord;
         for(i=0; i<wordlength; i++){
@@ -110,9 +104,9 @@ function CheckLetter(){
 }
 
 function ShowLetter(indexletter) {
-    for (var a = 1; a < (aantal_rijen + 1); a++) {
+    for (var i=1; i<(aantal_rijen + 1); i++) {
         console.log(a);
-        document.getElementById("letter" + (indexletter + 1) + "Row" + a).innerHTML= woord.charAt(indexletter);  
+        document.getElementById("letter" + (indexletter + 1) + "Row" + i).innerHTML= woord.charAt(indexletter);  
     }
 }
 
