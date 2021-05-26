@@ -5,7 +5,6 @@ body{
 .container{
     margin: 0 auto;
     margin-top: 100px;
-    border: 3px solid blue;
     width: 600px;
     text-align: center;
     background-color:white;
@@ -20,8 +19,8 @@ body{
 
 .WordBox{
     display: inline-block;
-    background-color: lightblue;
-    border: 3px solid blue;
+    background-color: white;
+    border: 3px solid black;
     height: 50px;
     width: 50px;
     font-size: 40px;
@@ -36,10 +35,6 @@ body{
 }
 
 #button{
-    background-color:white;
-    border: 1px solid blue;
-    font-size: 13px;
     text-align: right;
     margin-left: 40px;
-    border-radius: 40px;
 }
