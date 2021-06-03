@@ -1,57 +1,57 @@
-var nummer= Math.floor(Math.random() * words.length) + 1;
-var woord= words[nummer].toUpperCase();
-var copyword= woord;
-var div= ["container", "input"];
-var wordlength= woord.length;
-const aantal_rijen= 5;
-var RowHeight= 1;
-const id_row= "Row";
-const class_rows= "Rows";
-const ClassLetters= "Letters";
-var win= false;
-var pogingen =0;
+var nummer = Math.floor(Math.random() * words.length) + 1;
+var woord = words[nummer].toUpperCase();
+var copyword = woord;
+var div = ["container", "input"];
+var wordlength = woord.length;
+const aantal_rijen = 5;
+var RowHeight = 1;
+const id_row = "Row";
+const class_rows = "Rows";
+const ClassLetters = "Letters";
+var win = false;
+var pogingen = 0;
 
 spelboord();
 ShowLetter(0);
 function spelboord(){
     console.log(woord);
-    div[0]= document.createElement("div");
+    div[0] = document.createElement("div");
     div[0].setAttribute('class', "container");
     document.body.appendChild(div[0]);
 
-    var header= document.createElement("div");
+    var header = document.createElement("div");
     header.setAttribute('id', "h1");
     div[0].appendChild(header);
-    header.innerHTML= "LINGO";
+    header.innerHTML = "LINGO";
 
-    div[1]= document.createElement("div");
+    div[1] = document.createElement("div");
     div[1].setAttribute('class', "WoordenInput")
     header.appendChild(div[1]);
 
-    var label= document.createElement("label");
+    var label = document.createElement("label");
     label.setAttribute('type', "text");
     div[1].appendChild(label);
-    label.innerHTML= "vul een woord in"
+    label.innerHTML = "vul een woord in"
 
-    var input= document.createElement("input");
+    var input = document.createElement("input");
     input.setAttribute('style', "text-transform:uppercase");
     input.setAttribute('id', "wordinput");
     div[1].appendChild(input);
 
-    var inputBtn= document.createElement("input");
+    var inputBtn = document.createElement("input");
     inputBtn.setAttribute('type', "button");
     inputBtn.setAttribute('value', "Laat zien");
     inputBtn.setAttribute('id', "button");
     div[1].appendChild(inputBtn);
-    inputBtn.onclick= CheckLetter;
+    inputBtn.onclick = CheckLetter;
 
-    for(var loop=1; loop<=aantal_rijen; loop++){
+    for(var loop=1;loop<=aantal_rijen;loop++){
         element = document.createElement("div");
         element.className = class_rows;
         element.id = id_row + loop;
         div[0].appendChild(element);
 
-        for(var i=1; i<=wordlength; i++){
+        for(var i=1;i<=wordlength;i++){
             var Wordbox= document.createElement("div");
             Wordbox.className = "WordBox";
             Wordbox.id = "letter" + i + id_row + loop;
@@ -68,7 +68,7 @@ function CheckLetter(){
     var InputUser= document.getElementById("wordinput").value.toUpperCase();
     if(isNaN(InputUser) && InputUser.length == wordlength && win == false){
         copyword= woord;
-        for(i=0; i<wordlength; i++){
+        for(i=0;i<wordlength;i++){
             var letter2= woord.charAt(i); 
             var letter= InputUser.charAt(i);
             document.getElementById("letter" + (i+1) + "Row" + RowHeight).innerHTML= letter;
@@ -78,7 +78,7 @@ function CheckLetter(){
                 copyword = copyword.replace(letter, "");
             } 
         }
-        for(var i= 0; i<wordlength; i++){ 
+        for(var i=0;i<wordlength;i++){ 
             var letter2= woord.charAt(i); 
             var letter= InputUser.charAt(i);
 
@@ -97,15 +97,15 @@ function CheckLetter(){
             win = true;
         }   
     }
-    if(pogingen==6){
-        location.reload();
+    if(pogingen>=5){
+        //location.reload();
+        alert("helaas niet gehaald");
     }
     console.log(pogingen);
 }
 
 function ShowLetter(indexletter) {
-    for (var i=1; i<(aantal_rijen + 1); i++) {
-        console.log(a);
+    for (var i=1;i<(aantal_rijen + 1);i++){
         document.getElementById("letter" + (indexletter + 1) + "Row" + i).innerHTML= woord.charAt(indexletter);  
     }
 }
