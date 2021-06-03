@@ -52,7 +52,7 @@ function spelboord(){
         div[0].appendChild(element);
 
         for(var i=1;i<=wordlength;i++){
-            var Wordbox= document.createElement("div");
+            var Wordbox = document.createElement("div");
             Wordbox.className = "WordBox";
             Wordbox.id = "letter" + i + id_row + loop;
             Wordbox.innerHTML = "-";
@@ -65,7 +65,7 @@ function spelboord(){
 
 function CheckLetter(){
     pogingen++
-    var InputUser= document.getElementById("wordinput").value.toUpperCase();
+    var InputUser = document.getElementById("wordinput").value.toUpperCase();
     if(isNaN(InputUser) && InputUser.length == wordlength && win == false){
         copyword= woord;
         for(i=0;i<wordlength;i++){
@@ -104,7 +104,7 @@ function CheckLetter(){
     console.log(pogingen);
 }
 
-function ShowLetter(indexletter) {
+function ShowLetter(indexletter){
     for (var i=1;i<(aantal_rijen + 1);i++){
         document.getElementById("letter" + (indexletter + 1) + "Row" + i).innerHTML= woord.charAt(indexletter);  
     }
